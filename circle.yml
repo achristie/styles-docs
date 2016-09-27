@@ -6,6 +6,6 @@ dependencies:
     - npm run build
 deployment:
   aws:
-  branch: master
+    branch: master
     commands:
       - aws s3 sync build s3://cupcake-docs

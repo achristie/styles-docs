@@ -1,6 +1,11 @@
 machine:
   node:
-    version: 4.0.0
+    version: 6.0.0
 dependencies:
   post:
     - npm run build
+deployment:
+  aws:
+  branch: master
+    commands:
+      - aws s3 sync build s3://cupcake-docs

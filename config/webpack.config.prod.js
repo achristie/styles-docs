@@ -52,10 +52,11 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: 'source-map',
   // In production, we only want to load the polyfills and the app code.
-  entry: [
-    require.resolve('./polyfills'),
-    paths.appIndexJs
-  ],
+  entry: {
+    polyfill: require.resolve('./polyfills'),
+    src: paths.appIndexJs,
+    vendor: ['react', 'react-dom', 'react-router']
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -226,6 +227,7 @@ module.exports = {
         screw_ie8: true
       }
     }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
   ],

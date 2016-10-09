@@ -1,0 +1,13 @@
+{
+  "short_name": "Cupcake Docs",
+  "name": "Ipreo Style Framework Documentation",
+  "icons": [
+    {
+      "src": "ipreo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone"
+}

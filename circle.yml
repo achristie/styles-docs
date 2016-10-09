@@ -7,10 +7,11 @@ machine:
 dependencies:
   post:
     - npm run build
-deployment:
-  pre:
+test:
+  post:
     - git config user.name "achristie"
-    - git config user.email "awchristie86@gmail.com"
+    - git config user.email "awchristie86@gmail.com"        
+deployment:
   production:
     branch: master
     commands:

@@ -5,7 +5,7 @@ dependencies:
   post:
     - npm run build
 deployment:
-  aws:
+  production:
     branch: master
     commands:
-      - aws s3 sync build s3://cupcake-docs
+      - npm run deploy

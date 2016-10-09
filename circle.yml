@@ -11,6 +11,6 @@ deployment:
   production:
     branch: master
     commands:
-      - git config user.name "achristie"
-      - git config user.email "awchristie86@gmail.com"  
+      - git config --global user.name "achristie"
+      - git config --global user.email "awchristie86@gmail.com"  
       - npm run deploy

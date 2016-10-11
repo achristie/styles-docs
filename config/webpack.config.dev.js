@@ -110,6 +110,13 @@ module.exports = {
           })
         }
       },
+      // Use SASS loader for SCSS
+      // Use postcss for auto-prefixing
+      // Use CSSModules for isolation
+      {
+        test: /\.scss$/,
+        loader: 'style!css?modules&localIdentName=[path][name]--[local]---[hash:base64:5]!postcss!sass'
+      },
       // Do not use CSS Modules or AutoPrefixer on NPM Packages
       {
         test: /\.css$/,
@@ -163,7 +170,7 @@ module.exports = {
           '>1%',
           'last 4 versions',
           'Firefox ESR',
-          'not ie < 10', // Cupcake does not support < IE10
+          'not ie < 11', // Cupcake does not support < IE11
         ]
       }),
     ];

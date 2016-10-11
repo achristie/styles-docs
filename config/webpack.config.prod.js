@@ -175,7 +175,7 @@ module.exports = {
           '>1%',
           'last 4 versions',
           'Firefox ESR',
-          'not ie < 10', // Cupcake does not support < IE10
+          'not ie < 11', // Cupcake does not support < IE11
         ]
       }),
     ];

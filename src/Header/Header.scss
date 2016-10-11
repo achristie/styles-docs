@@ -1,0 +1,14 @@
+$bg-color: #0c2d4d;
+$height: 180px;
+$color: white;
+
+.header {
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+  background: $bg-color;
+  height: $height;
+  color: $color;
+}
+

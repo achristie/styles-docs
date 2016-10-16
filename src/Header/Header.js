@@ -6,8 +6,8 @@ import styles from './Header.scss';
 const Header = () => {
   return (
     <div className={styles.header}>
+      <Nav />
       <Brand />
-      <Nav items={['Components', 'Samples', 'Misc']}/>
     </div>
   );
 };

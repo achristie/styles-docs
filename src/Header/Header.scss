@@ -1,6 +1,7 @@
-$bg-color: #0c2d4d;
-$height: 180px;
+$bg-color: #0082de;
+$height: 80px;
 $color: white;
+$activeColor: #d94f5c;
 
 .header {
   left: 0;
@@ -12,3 +13,53 @@ $color: white;
   color: $color;
 }
 
+.list {
+  list-style: none;
+  flex-wrap: wrap;
+  display: flex;
+  width: 400px;
+  float: right;
+  justify-content: flex-end;
+  margin-right: 30px;
+  margin: 0;
+}
+
+.item {
+  display: block;
+  margin: 1em .25em;
+}
+
+.item.active {
+  color: $activeColor;
+}
+
+.link {
+  position: relative;
+  display: block;
+  text-align: center;
+  transition: color 0.3s;
+  font-size: 1.15em;
+  font-weight: bold;
+  display: block;
+  padding: 1em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.item.active .link::before {
+  transform: scale3d(1, 1, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: $activeColor;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.1s;
+}

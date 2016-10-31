@@ -133,6 +133,13 @@ module.exports = {
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
         exclude: paths.appNodeModules
       },
+      // Use SASS loader for SCSS
+      // Use postcss for auto-prefixing
+      // Use CSSModules for isolation
+      {
+        test: /\.scss$/,
+        loader: 'style!css?modules&localIdentName=[path][name]--[local]---[hash:base64:5]!postcss!sass'
+      },
       // don't alter npm css
       {
         test: /\.css$/,

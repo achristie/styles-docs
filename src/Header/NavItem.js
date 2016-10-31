@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './Header.scss';
+import { Link } from 'react-router';
 
 const NavItem = ({ onClick, item, isActive }) => {
   return (
     <li 
       className={[styles.item, isActive ? styles.active : ""].join(" ")} 
       onClick={() => onClick(item)}>
-      <a className={styles.link}> {item} </a>
+      <Link to={`/${item}`} 
+        className={styles.link}>
+        {item}
+      </Link>
     </li>
   );
 };

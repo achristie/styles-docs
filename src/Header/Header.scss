@@ -1,4 +1,4 @@
-$bg-color: #0082de;
+@import '../scss/variables';
 $height: 80px;
 $color: white;
 $activeColor: #d94f5c;
@@ -8,25 +8,20 @@ $activeColor: #d94f5c;
   right: 0;
   top: 0;
   position: fixed;
-  background: $bg-color;
+  background: $primary-ipreo-color;
   height: $height;
-  color: $color;
 }
 
 .list {
   list-style: none;
-  flex-wrap: wrap;
-  display: flex;
-  width: 400px;
   float: right;
-  justify-content: flex-end;
   margin-right: 30px;
   margin: 0;
 }
 
 .item {
   display: block;
-  margin: 1em .25em;
+  margin: .2em .25em;
 }
 
 .item.active {
@@ -34,6 +29,7 @@ $activeColor: #d94f5c;
 }
 
 .link {
+  color: $color;
   position: relative;
   display: block;
   text-align: center;
@@ -43,6 +39,8 @@ $activeColor: #d94f5c;
   display: block;
   padding: 1em;
   cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
   user-select: none;
 }
 
@@ -50,6 +48,10 @@ $activeColor: #d94f5c;
   transform: scale3d(1, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
+}
+
+.link:hover, .link:focus {
+  color: $color;
 }
 
 .link::before {

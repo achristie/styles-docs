@@ -7,11 +7,11 @@ export default class Nav extends Component {
     super(props);
     this.state = {
       items: [
-        "Components",
-        "Examples",
-        "More..."        
+        "components",
+        "examples",
+        "more..."        
       ],
-      activeItem: null
+      activeItem: props.activeItem || null
     }
     this.handleClick = this.handleClick.bind(this);
   }
